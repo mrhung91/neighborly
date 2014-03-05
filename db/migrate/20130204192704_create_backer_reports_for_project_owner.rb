@@ -7,7 +7,7 @@ class CreateBackerReportsForProjectOwner < ActiveRecord::Migration
       r.description as reward_description,
       b.confirmed_at::date,
       b.value as back_value,
-      (b.value* (SELECT value::numeric FROM configurations WHERE name = 'catarse_fee') ) as service_fee,
+      (b.value* (SELECT value::numeric FROM configurations WHERE name = 'platform_fee') ) as service_fee,
       u.email as user_email,
       b.payer_email as payer_email,
       b.payment_method,
